@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C8BE23A91CD7AE1F000165AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BE23A81CD7AE1F000165AD /* AppDelegate.swift */; };
+		C8BE23AB1CD7AE1F000165AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BE23AA1CD7AE1F000165AD /* ViewController.swift */; };
+		C8BE23AE1CD7AE1F000165AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8BE23AC1CD7AE1F000165AD /* Main.storyboard */; };
+		C8BE23B01CD7AE1F000165AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8BE23AF1CD7AE1F000165AD /* Assets.xcassets */; };
+		C8BE23B31CD7AE1F000165AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8BE23B11CD7AE1F000165AD /* LaunchScreen.storyboard */; };
+		C8BE23BE1CD7AE20000165AD /* Solidus_Swift_SDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BE23BD1CD7AE20000165AD /* Solidus_Swift_SDKTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C8BE23BA1CD7AE20000165AD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C8BE239D1CD7AE1F000165AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C8BE23A41CD7AE1F000165AD;
+			remoteInfo = "Solidus-Swift-SDK";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C8BE23A51CD7AE1F000165AD /* Solidus-Swift-SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Solidus-Swift-SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8BE23A81CD7AE1F000165AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C8BE23AA1CD7AE1F000165AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C8BE23AD1CD7AE1F000165AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C8BE23AF1CD7AE1F000165AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C8BE23B21CD7AE1F000165AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C8BE23B41CD7AE20000165AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8BE23B91CD7AE20000165AD /* Solidus-Swift-SDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Solidus-Swift-SDKTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8BE23BD1CD7AE20000165AD /* Solidus_Swift_SDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solidus_Swift_SDKTests.swift; sourceTree = "<group>"; };
+		C8BE23BF1CD7AE20000165AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C8BE23A21CD7AE1F000165AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8BE23B61CD7AE20000165AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C8BE239C1CD7AE1F000165AD = {
+			isa = PBXGroup;
+			children = (
+				C8BE23A71CD7AE1F000165AD /* Solidus-Swift-SDK */,
+				C8BE23BC1CD7AE20000165AD /* Solidus-Swift-SDKTests */,
+				C8BE23A61CD7AE1F000165AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C8BE23A61CD7AE1F000165AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C8BE23A51CD7AE1F000165AD /* Solidus-Swift-SDK.app */,
+				C8BE23B91CD7AE20000165AD /* Solidus-Swift-SDKTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C8BE23A71CD7AE1F000165AD /* Solidus-Swift-SDK */ = {
+			isa = PBXGroup;
+			children = (
+				C8BE23A81CD7AE1F000165AD /* AppDelegate.swift */,
+				C8BE23AA1CD7AE1F000165AD /* ViewController.swift */,
+				C8BE23AC1CD7AE1F000165AD /* Main.storyboard */,
+				C8BE23AF1CD7AE1F000165AD /* Assets.xcassets */,
+				C8BE23B11CD7AE1F000165AD /* LaunchScreen.storyboard */,
+				C8BE23B41CD7AE20000165AD /* Info.plist */,
+			);
+			path = "Solidus-Swift-SDK";
+			sourceTree = "<group>";
+		};
+		C8BE23BC1CD7AE20000165AD /* Solidus-Swift-SDKTests */ = {
+			isa = PBXGroup;
+			children = (
+				C8BE23BD1CD7AE20000165AD /* Solidus_Swift_SDKTests.swift */,
+				C8BE23BF1CD7AE20000165AD /* Info.plist */,
+			);
+			path = "Solidus-Swift-SDKTests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C8BE23A41CD7AE1F000165AD /* Solidus-Swift-SDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8BE23C21CD7AE20000165AD /* Build configuration list for PBXNativeTarget "Solidus-Swift-SDK" */;
+			buildPhases = (
+				C8BE23A11CD7AE1F000165AD /* Sources */,
+				C8BE23A21CD7AE1F000165AD /* Frameworks */,
+				C8BE23A31CD7AE1F000165AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Solidus-Swift-SDK";
+			productName = "Solidus-Swift-SDK";
+			productReference = C8BE23A51CD7AE1F000165AD /* Solidus-Swift-SDK.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C8BE23B81CD7AE20000165AD /* Solidus-Swift-SDKTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C8BE23C51CD7AE20000165AD /* Build configuration list for PBXNativeTarget "Solidus-Swift-SDKTests" */;
+			buildPhases = (
+				C8BE23B51CD7AE20000165AD /* Sources */,
+				C8BE23B61CD7AE20000165AD /* Frameworks */,
+				C8BE23B71CD7AE20000165AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C8BE23BB1CD7AE20000165AD /* PBXTargetDependency */,
+			);
+			name = "Solidus-Swift-SDKTests";
+			productName = "Solidus-Swift-SDKTests";
+			productReference = C8BE23B91CD7AE20000165AD /* Solidus-Swift-SDKTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C8BE239D1CD7AE1F000165AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Omar Guzman";
+				TargetAttributes = {
+					C8BE23A41CD7AE1F000165AD = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					C8BE23B81CD7AE20000165AD = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = C8BE23A41CD7AE1F000165AD;
+					};
+				};
+			};
+			buildConfigurationList = C8BE23A01CD7AE1F000165AD /* Build configuration list for PBXProject "Solidus-Swift-SDK" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C8BE239C1CD7AE1F000165AD;
+			productRefGroup = C8BE23A61CD7AE1F000165AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C8BE23A41CD7AE1F000165AD /* Solidus-Swift-SDK */,
+				C8BE23B81CD7AE20000165AD /* Solidus-Swift-SDKTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C8BE23A31CD7AE1F000165AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8BE23B31CD7AE1F000165AD /* LaunchScreen.storyboard in Resources */,
+				C8BE23B01CD7AE1F000165AD /* Assets.xcassets in Resources */,
+				C8BE23AE1CD7AE1F000165AD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8BE23B71CD7AE20000165AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C8BE23A11CD7AE1F000165AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8BE23AB1CD7AE1F000165AD /* ViewController.swift in Sources */,
+				C8BE23A91CD7AE1F000165AD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C8BE23B51CD7AE20000165AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8BE23BE1CD7AE20000165AD /* Solidus_Swift_SDKTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C8BE23BB1CD7AE20000165AD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C8BE23A41CD7AE1F000165AD /* Solidus-Swift-SDK */;
+			targetProxy = C8BE23BA1CD7AE20000165AD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C8BE23AC1CD7AE1F000165AD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8BE23AD1CD7AE1F000165AD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C8BE23B11CD7AE1F000165AD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8BE23B21CD7AE1F000165AD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C8BE23C01CD7AE20000165AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C8BE23C11CD7AE20000165AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C8BE23C31CD7AE20000165AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Solidus-Swift-SDK/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BrightCoders.Solidus-Swift-SDK";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C8BE23C41CD7AE20000165AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Solidus-Swift-SDK/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BrightCoders.Solidus-Swift-SDK";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C8BE23C61CD7AE20000165AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Solidus-Swift-SDKTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BrightCoders.Solidus-Swift-SDKTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solidus-Swift-SDK.app/Solidus-Swift-SDK";
+			};
+			name = Debug;
+		};
+		C8BE23C71CD7AE20000165AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Solidus-Swift-SDKTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.BrightCoders.Solidus-Swift-SDKTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solidus-Swift-SDK.app/Solidus-Swift-SDK";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C8BE23A01CD7AE1F000165AD /* Build configuration list for PBXProject "Solidus-Swift-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8BE23C01CD7AE20000165AD /* Debug */,
+				C8BE23C11CD7AE20000165AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C8BE23C21CD7AE20000165AD /* Build configuration list for PBXNativeTarget "Solidus-Swift-SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8BE23C31CD7AE20000165AD /* Debug */,
+				C8BE23C41CD7AE20000165AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C8BE23C51CD7AE20000165AD /* Build configuration list for PBXNativeTarget "Solidus-Swift-SDKTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C8BE23C61CD7AE20000165AD /* Debug */,
+				C8BE23C71CD7AE20000165AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C8BE239D1CD7AE1F000165AD /* Project object */;
+}
