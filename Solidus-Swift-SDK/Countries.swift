@@ -45,4 +45,12 @@ class Countries: NSObject {
             callback(result)
         }
     }
+    
+    class func Search (StateName:String, callback: (AnyObject) -> ())
+    {
+        let currentService = self.EndPoint+"?q[name_cont]=\(StateName)"
+        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (result) in
+            callback(result)
+        }
+    }
 }
