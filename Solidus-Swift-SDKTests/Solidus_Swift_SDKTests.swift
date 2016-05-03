@@ -31,7 +31,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
             }
             else {
                 XCTAssertNotNil(result, "service passed")
-                //asyncExpectation.fulfill()
+                asyncExpectation.fulfill()
             }
             
         }
