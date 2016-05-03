@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0E2A501CD902D200A4B34F /* EndpointsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E2A4F1CD902D200A4B34F /* EndpointsURL.swift */; };
+		AA0E2A521CD905E000A4B34F /* EndpointsBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E2A511CD905E000A4B34F /* EndpointsBase.swift */; };
+		AA0E2A531CD905E000A4B34F /* EndpointsBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E2A511CD905E000A4B34F /* EndpointsBase.swift */; };
 		C8BE23A91CD7AE1F000165AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BE23A81CD7AE1F000165AD /* AppDelegate.swift */; };
 		C8BE23AB1CD7AE1F000165AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BE23AA1CD7AE1F000165AD /* ViewController.swift */; };
 		C8BE23AE1CD7AE1F000165AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8BE23AC1CD7AE1F000165AD /* Main.storyboard */; };
@@ -29,6 +32,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA0E2A4F1CD902D200A4B34F /* EndpointsURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsURL.swift; sourceTree = "<group>"; };
+		AA0E2A511CD905E000A4B34F /* EndpointsBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsBase.swift; sourceTree = "<group>"; };
 		C8BE23A51CD7AE1F000165AD /* Solidus-Swift-SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Solidus-Swift-SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8BE23A81CD7AE1F000165AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8BE23AA1CD7AE1F000165AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +105,7 @@
 			children = (
 				C8BE23BD1CD7AE20000165AD /* Solidus_Swift_SDKTests.swift */,
 				C8BE23BF1CD7AE20000165AD /* Info.plist */,
+				AA0E2A4F1CD902D200A4B34F /* EndpointsURL.swift */,
 			);
 			path = "Solidus-Swift-SDKTests";
 			sourceTree = "<group>";
@@ -117,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				C8BE23CE1CD7AFBA000165AD /* Countries.swift */,
+				AA0E2A511CD905E000A4B34F /* EndpointsBase.swift */,
 			);
 			name = EndPoints;
 			sourceTree = "<group>";
@@ -227,6 +234,7 @@
 				C8BE23CA1CD7AE5A000165AD /* Definitions.swift in Sources */,
 				C8BE23CF1CD7AFBA000165AD /* Countries.swift in Sources */,
 				C8BE23A91CD7AE1F000165AD /* AppDelegate.swift in Sources */,
+				AA0E2A521CD905E000A4B34F /* EndpointsBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,7 +242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA0E2A501CD902D200A4B34F /* EndpointsURL.swift in Sources */,
 				C8BE23BE1CD7AE20000165AD /* Solidus_Swift_SDKTests.swift in Sources */,
+				AA0E2A531CD905E000A4B34F /* EndpointsBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +426,7 @@
 				C8BE23C41CD7AE20000165AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8BE23C51CD7AE20000165AD /* Build configuration list for PBXNativeTarget "Solidus-Swift-SDKTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +435,7 @@
 				C8BE23C71CD7AE20000165AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
