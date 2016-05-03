@@ -21,7 +21,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
         super.tearDown()
     }
     
-    func testCountries() {
+    func testCountriesList() {
         let asyncExpectation = expectationWithDescription("async call")
         
         Countries.List { (result) in
@@ -44,6 +44,25 @@ class Solidus_Swift_SDKTests: XCTestCase {
         let asyncExpectation = expectationWithDescription("async call")
         
         Countries.Show("117") { (result) in
+            if((result as? Bool) != nil) {
+                XCTAssertFalse(result as! Bool, "service error")
+                asyncExpectation.fulfill()
+            }
+            else {
+                XCTAssertNotNil(result, "service passed")
+                asyncExpectation.fulfill()
+            }
+            
+        }
+        self.waitForExpectationsWithTimeout(10) { (error) in
+            XCTAssertNil(error, "something went wrong")
+        }
+    }
+    
+    func testCountrySearch() {
+        let asyncExpectation = expectationWithDescription("async call")
+        
+        Countries.Search("Mexico") { (result) in
             if((result as? Bool) != nil) {
                 XCTAssertFalse(result as! Bool, "service error")
                 asyncExpectation.fulfill()
