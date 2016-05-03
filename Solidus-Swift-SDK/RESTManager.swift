@@ -25,7 +25,14 @@ class RESTManager: NSObject {
         let task = session.dataTaskWithRequest(request) { (result, response, error) -> Void in
             do {
                 if let json = try NSJSONSerialization.JSONObjectWithData(result!, options: []) as? NSDictionary { // json properly fetched
-                    callback(json)
+                    if (json.objectForKey("error") != nil)
+                    {
+                        callback(false)
+                    }
+                    else
+                    {
+                        callback(json)
+                    }
                 } else {
                     let jsonStr = NSString(data: result!, encoding: NSUTF8StringEncoding)    // No error thrown, but not NSDictionary
                     print("Error could not parse JSON: \(jsonStr)")

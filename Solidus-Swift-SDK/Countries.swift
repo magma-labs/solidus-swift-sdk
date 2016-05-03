@@ -17,7 +17,8 @@ class Countries: NSObject {
     
     class func List (callback: (AnyObject) -> ())
     {
-        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: self.EndPoint, method: "GET", accessToken: "", accessTokenInHeader: false) { (result) in
+        let currentService = self.EndPoint
+        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (result) in
             callback(result)
         }
     }
