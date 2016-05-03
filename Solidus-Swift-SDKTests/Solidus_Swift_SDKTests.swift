@@ -21,15 +21,60 @@ class Solidus_Swift_SDKTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCountriesList() {
+        let asyncExpectation = expectationWithDescription("async call")
+        
+        Countries.List { (result) in
+            if((result as? Bool) != nil) {
+                XCTAssertFalse(result as! Bool, "service error")
+                asyncExpectation.fulfill()
+            }
+            else {
+                XCTAssertNotNil(result, "service passed")
+                asyncExpectation.fulfill()
+            }
+            
+        }
+        self.waitForExpectationsWithTimeout(10) { (error) in
+            XCTAssertNil(error, "something went wrong")
+        }
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+    func testCountryShow() {
+        let asyncExpectation = expectationWithDescription("async call")
+        
+        Countries.Show("117") { (result) in
+            if((result as? Bool) != nil) {
+                XCTAssertFalse(result as! Bool, "service error")
+                asyncExpectation.fulfill()
+            }
+            else {
+                XCTAssertNotNil(result, "service passed")
+                asyncExpectation.fulfill()
+            }
+            
+        }
+        self.waitForExpectationsWithTimeout(10) { (error) in
+            XCTAssertNil(error, "something went wrong")
+        }
+    }
+    
+    func testCountrySearch() {
+        let asyncExpectation = expectationWithDescription("async call")
+        
+        Countries.Search("Mexico") { (result) in
+            if((result as? Bool) != nil) {
+                XCTAssertFalse(result as! Bool, "service error")
+                asyncExpectation.fulfill()
+            }
+            else {
+                XCTAssertNotNil(result, "service passed")
+                asyncExpectation.fulfill()
+            }
+            
+        }
+        self.waitForExpectationsWithTimeout(10) { (error) in
+            XCTAssertNil(error, "something went wrong")
         }
     }
     
