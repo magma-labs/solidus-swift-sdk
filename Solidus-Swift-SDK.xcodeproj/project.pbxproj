@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C8249E761CDAAC2A002DF558 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8249E751CDAAC2A002DF558 /* Orders.swift */; };
 		C8BE23A91CD7AE1F000165AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8BE23A81CD7AE1F000165AD /* AppDelegate.swift */; };
 		C8BE23AE1CD7AE1F000165AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8BE23AC1CD7AE1F000165AD /* Main.storyboard */; };
 		C8BE23B01CD7AE1F000165AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8BE23AF1CD7AE1F000165AD /* Assets.xcassets */; };
@@ -29,6 +30,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		29880A995641311BD40F1991 /* Pods-Solidus-Swift-SDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solidus-Swift-SDK.release.xcconfig"; path = "Pods/Target Support Files/Pods-Solidus-Swift-SDK/Pods-Solidus-Swift-SDK.release.xcconfig"; sourceTree = "<group>"; };
+		4B20387E2C1966A1957DF0C3 /* Pods_Solidus_Swift_SDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Solidus_Swift_SDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A116E035A617C8ED0404F419 /* Pods-Solidus-Swift-SDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solidus-Swift-SDK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Solidus-Swift-SDK/Pods-Solidus-Swift-SDK.debug.xcconfig"; sourceTree = "<group>"; };
+		C8249E751CDAAC2A002DF558 /* Orders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		C8BE23A51CD7AE1F000165AD /* Solidus-Swift-SDK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Solidus-Swift-SDK.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8BE23A81CD7AE1F000165AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8BE23AD1CD7AE1F000165AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -45,13 +50,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C8BE23A21CD7AE1F000165AD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C8BE23B61CD7AE20000165AD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -62,12 +60,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04A84419C761468EBDB33B49 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A116E035A617C8ED0404F419 /* Pods-Solidus-Swift-SDK.debug.xcconfig */,
+				29880A995641311BD40F1991 /* Pods-Solidus-Swift-SDK.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C8249E731CDAA0C3002DF558 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				C8BE23CD1CD7AF9B000165AD /* EndPoints */,
+				C8BE23C81CD7AE2A000165AD /* Managers */,
+			);
+			name = SDK;
+			sourceTree = "<group>";
+		};
+		C8249E741CDAA0D4002DF558 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				C8BE23A81CD7AE1F000165AD /* AppDelegate.swift */,
+				C8BE23AC1CD7AE1F000165AD /* Main.storyboard */,
+				C8BE23AF1CD7AE1F000165AD /* Assets.xcassets */,
+				C8BE23B11CD7AE1F000165AD /* LaunchScreen.storyboard */,
+				C8BE23D01CD90106000165AD /* ViewControllers */,
+			);
+			name = Example;
+			sourceTree = "<group>";
+		};
 		C8BE239C1CD7AE1F000165AD = {
 			isa = PBXGroup;
 			children = (
 				C8BE23A71CD7AE1F000165AD /* Solidus-Swift-SDK */,
 				C8BE23BC1CD7AE20000165AD /* Solidus-Swift-SDKTests */,
 				C8BE23A61CD7AE1F000165AD /* Products */,
+				04A84419C761468EBDB33B49 /* Pods */,
+				FF6FF4880EE4B35F632E00CA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,13 +113,8 @@
 		C8BE23A71CD7AE1F000165AD /* Solidus-Swift-SDK */ = {
 			isa = PBXGroup;
 			children = (
-				C8BE23CD1CD7AF9B000165AD /* EndPoints */,
-				C8BE23C81CD7AE2A000165AD /* Managers */,
-				C8BE23D01CD90106000165AD /* ViewControllers */,
-				C8BE23A81CD7AE1F000165AD /* AppDelegate.swift */,
-				C8BE23AC1CD7AE1F000165AD /* Main.storyboard */,
-				C8BE23AF1CD7AE1F000165AD /* Assets.xcassets */,
-				C8BE23B11CD7AE1F000165AD /* LaunchScreen.storyboard */,
+				C8249E731CDAA0C3002DF558 /* SDK */,
+				C8249E741CDAA0D4002DF558 /* Example */,
 				C8BE23B41CD7AE20000165AD /* Info.plist */,
 			);
 			path = "Solidus-Swift-SDK";
@@ -117,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				C8BE23CE1CD7AFBA000165AD /* Countries.swift */,
+				C8249E751CDAAC2A002DF558 /* Orders.swift */,
 			);
 			name = EndPoints;
 			sourceTree = "<group>";
@@ -129,6 +155,14 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		FF6FF4880EE4B35F632E00CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4B20387E2C1966A1957DF0C3 /* Pods_Solidus_Swift_SDK.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,7 +171,6 @@
 			buildConfigurationList = C8BE23C21CD7AE20000165AD /* Build configuration list for PBXNativeTarget "Solidus-Swift-SDK" */;
 			buildPhases = (
 				C8BE23A11CD7AE1F000165AD /* Sources */,
-				C8BE23A21CD7AE1F000165AD /* Frameworks */,
 				C8BE23A31CD7AE1F000165AD /* Resources */,
 			);
 			buildRules = (
@@ -230,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8249E761CDAAC2A002DF558 /* Orders.swift in Sources */,
 				C8BE23CC1CD7AE69000165AD /* RESTManager.swift in Sources */,
 				C8BE23CA1CD7AE5A000165AD /* Definitions.swift in Sources */,
 				C8BE23D21CD90140000165AD /* MainViewController.swift in Sources */,
@@ -365,6 +399,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Solidus-Swift-SDK/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"OTHER_SWIFT_FLAGS[arch=*]" = "-D DEBUG";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.BrightCoders.Solidus-Swift-SDK";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -424,6 +459,7 @@
 				C8BE23C41CD7AE20000165AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C8BE23C51CD7AE20000165AD /* Build configuration list for PBXNativeTarget "Solidus-Swift-SDKTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +468,7 @@
 				C8BE23C71CD7AE20000165AD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
