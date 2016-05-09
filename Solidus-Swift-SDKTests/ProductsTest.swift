@@ -42,4 +42,51 @@ class ProductsTest: XCTestCase {
         }
     }
     
+    func testShowProductByPermalink() {
+        let expectation = expectationWithDescription("showProductByPermalink")
+        let products = Products()
+        
+        products.showByPermalink("ruby-on-rails-tote") { (result, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                
+                XCTAssertEqual(error, nil)
+                let productId = result!["id"]!.integerValue
+                XCTAssertGreaterThanOrEqual(productId, 1)
+                print(result)
+            }
+            expectation.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(10) { error in
+            if let error = error {
+                XCTFail("waitForExpectationTimeout errored: \(error)")
+            }
+        }
+    }
+    
+    func testShowProductById() {
+        let expectation = expectationWithDescription("showProductById")
+        let products = Products()
+        let expectedProductId = 2
+        
+        products.showProductById(expectedProductId) { (result, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                XCTAssertEqual(error, nil)
+                let productId = result!["id"]!.integerValue
+                XCTAssertEqual(productId, expectedProductId)
+            }
+            expectation.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(10) { error in
+            if let error = error {
+                XCTFail("waitForExpectationTimeout errored: \(error)")
+            }
+        }
+    }
+    
 }
