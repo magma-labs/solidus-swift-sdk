@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class RESTManager: NSObject {
-    class func sendData (data:AnyObject, service:String, method:String, accessToken:String, accessTokenInHeader:Bool, callback: (Bool, AnyObject) -> ()) {
+    class func sendData (data:AnyObject, service:String, method:String, accessToken:String, accessTokenInHeader:Bool, callback: (Bool, AnyObject, NSError) -> ()) {
         let strURL:String
         if(accessToken != ""){
             strURL = Definitions.SERVER_URL + "\(service)?token=\(accessToken)"
@@ -29,7 +29,9 @@ class RESTManager: NSObject {
             do{
                 let jsonData = try NSJSONSerialization.dataWithJSONObject(data, options: NSJSONWritingOptions.PrettyPrinted)
                 let theJSONText = NSString(data: jsonData, encoding: NSASCIIStringEncoding)
-                print("JSON string = \(theJSONText!)")
+                #if DEBUG
+                    print("JSON string = \(theJSONText!)")
+                #endif
                 request.HTTPBody = jsonData
             } catch let error as NSError {
                 print(error)
@@ -43,20 +45,32 @@ class RESTManager: NSObject {
                         #if DEBUG
                             print("Debug Log info: \(response), \(error)")
                         #endif
-                        callback(false, json)
+                        if(error != nil) {
+                            callback(false, json, error!)
+                        }
+                        else {
+                            let err = NSError(domain: "", code: 0, userInfo: nil)
+                            callback(false, json, err)
+                        }
                     }
                     else {
                         #if DEBUG
                             print("Debug Log info: \(response), \(error)")
                         #endif
-                        callback(true, json)
+                        if(error != nil) {
+                            callback(true, json, error!)
+                        }
+                        else {
+                            let err = NSError(domain: "", code: 0, userInfo: nil)
+                            callback(true, json, err)
+                        }
                     }
                 } else {
                     let jsonStr = NSString(data: result!, encoding: NSUTF8StringEncoding)
                     #if DEBUG
                         print("Debug Log info: \(response), \(error)")
                     #endif
-                    callback(false, jsonStr!)
+                    callback(false, jsonStr!, error!)
                 }
             } catch let parseError {
                 print(parseError)
@@ -66,10 +80,10 @@ class RESTManager: NSObject {
                 #endif
                 if let httpResponse = response as? NSHTTPURLResponse {
                     if(httpResponse.statusCode == 204) {
-                        callback(true, jsonStr!)
+                        callback(true, jsonStr!, error!)
                     }
                     else{
-                        callback(false, jsonStr!)
+                        callback(false, jsonStr!, error!)
                     }
                 }
             }
