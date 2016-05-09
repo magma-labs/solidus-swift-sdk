@@ -38,7 +38,7 @@ class RESTManager: NSObject {
         
         let task = session.dataTaskWithRequest(request) { (result, response, error) -> Void in
             do {
-                if let json = try NSJSONSerialization.JSONObjectWithData(result!, options: []) as? NSDictionary { // json properly fetched
+                if let json = try NSJSONSerialization.JSONObjectWithData(result!, options: []) as? NSDictionary {
                     if (json.objectForKey("error") != nil) {
                         #if DEBUG
                             print("Debug Log info: \(response), \(error)")
@@ -52,20 +52,20 @@ class RESTManager: NSObject {
                         callback(true, json)
                     }
                 } else {
-                    let jsonStr = NSString(data: result!, encoding: NSUTF8StringEncoding)    // No error thrown, but not NSDictionary
+                    let jsonStr = NSString(data: result!, encoding: NSUTF8StringEncoding)
                     #if DEBUG
                         print("Debug Log info: \(response), \(error)")
                     #endif
                     callback(false, jsonStr!)
                 }
             } catch let parseError {
-                print(parseError)                                                          // Log the error thrown by `JSONObjectWithData`
+                print(parseError)
                 let jsonStr = NSString(data: result!, encoding: NSUTF8StringEncoding)
                 #if DEBUG
                     print("Debug Log info: \(response), \(error)")
                 #endif
                 if let httpResponse = response as? NSHTTPURLResponse {
-                    if(httpResponse.statusCode == 204){ // this happens when emptying an order
+                    if(httpResponse.statusCode == 204) {
                         callback(true, jsonStr!)
                     }
                     else{

@@ -13,16 +13,12 @@ class Solidus_Swift_SDKTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    // countries tests
     func testCountriesList() {
         let asyncExpectation = expectationWithDescription("async call")
         
@@ -31,15 +27,15 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 XCTAssert(success, "service success")
                 let count = result.objectForKey("count") as! Int
                 if(count > 0) {
-                    XCTAssertGreaterThan(count, 0) // result has info
+                    XCTAssertGreaterThan(count, 0)
                 }
                 else {
-                    XCTAssertEqual(count, 0) // result has no info
+                    XCTAssertEqual(count, 0)
                 }
                 asyncExpectation.fulfill()
             }
             else {
-                XCTAssertFalse(success, "service unsuccess") // service fails but fullfills expectation to pass test
+                XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
         }
@@ -59,7 +55,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 asyncExpectation.fulfill()
             }
             else {
-                XCTAssertFalse(success, "service unsuccess") // service fails but fullfills expectation to pass test
+                XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
         }
@@ -79,7 +75,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 asyncExpectation.fulfill()
             }
             else {
-                XCTAssertFalse(success, "service unsuccess") // service fails but fullfills expectation to pass test
+                XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
         }
@@ -99,7 +95,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 asyncExpectation.fulfill()
             }
             else {
-                XCTAssertFalse(success, "service unsuccess") // service fails but fullfills expectation to pass test
+                XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
         }
@@ -116,15 +112,15 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 XCTAssert(success, "service success")
                 let count = result.objectForKey("count") as! Int
                 if(count > 0) {
-                    XCTAssertGreaterThan(count, 0) // result has info
+                    XCTAssertGreaterThan(count, 0)
                 }
                 else {
-                    XCTAssertEqual(count, 0) // result has no info
+                    XCTAssertEqual(count, 0)
                 }
                 asyncExpectation.fulfill()
             }
             else {
-                XCTAssertFalse(success, "service unsuccess") // service fails but fullfills expectation to pass test
+                XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
         }
@@ -133,7 +129,6 @@ class Solidus_Swift_SDKTests: XCTestCase {
         }
     }
     
-    // orders testing
     func testOrdersList() {
         let asyncExpectation = expectationWithDescription("async call")
         
@@ -142,15 +137,15 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 XCTAssert(success, "service success")
                 let currentPage = result.objectForKey("current_page") as! Int
                 if(currentPage > 0) {
-                    XCTAssertGreaterThan(currentPage, 0) // result has info
+                    XCTAssertGreaterThan(currentPage, 0)
                 }
                 else {
-                    XCTAssertEqual(currentPage, 0) // result has no info
+                    XCTAssertEqual(currentPage, 0)
                 }
                 asyncExpectation.fulfill()
             }
             else {
-                XCTAssertFalse(success, "service unsuccess") // service fails but fullfills expectation to pass test
+                XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
         }
@@ -170,7 +165,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 asyncExpectation.fulfill()
             }
             else {
-                XCTAssertFalse(success, "service unsuccess") // service fails but fullfills expectation to pass test
+                XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
         }
@@ -188,7 +183,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 asyncExpectation.fulfill()
             }
             else {
-                XCTAssertFalse(success, "service unsuccess") // service fails but fullfills expectation to pass test
+                XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
         }
@@ -207,7 +202,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 asyncExpectation.fulfill()
             }
             else {
-                XCTAssertFalse(success, "service unsuccess") // service fails but fullfills expectation to pass test
+                XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
         }
@@ -219,14 +214,14 @@ class Solidus_Swift_SDKTests: XCTestCase {
     func testOrdersSearchByEmail() {
         let asyncExpectation = expectationWithDescription("async call")
         
-        let predicate = "q[email_cont]=spree@example.com"//"q[number]=R614298791"
+        let predicate = "q[email_cont]=spree@example.com"
         Orders.Search(predicate) { (success, result) in
             if(success) {
                 XCTAssert(success, "service success")
                 asyncExpectation.fulfill()
             }
             else {
-                XCTAssertFalse(success, "service unsuccess") // service fails but fullfills expectation to pass test
+                XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
         }

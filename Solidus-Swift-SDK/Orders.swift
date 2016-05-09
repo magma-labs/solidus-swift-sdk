@@ -17,7 +17,6 @@ class Orders: NSObject {
         }
     }
     
-    // toDo: figure out how to search using Ransack
     class func Search (predicate: String, callback: (Bool, AnyObject) -> ()) {
         let currentService = EndpointsBase.orders+"?\(predicate)&token=\(Definitions.AUTH_TOKEN)"
         RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (success, result) in
@@ -38,8 +37,6 @@ class Orders: NSObject {
             callback(success, result)
         }
     }
-
-    //toDo: pending Address
     
     class func Empty (orderId: String, callback: (Bool, AnyObject) -> ()) {
         let currentService = EndpointsBase.orders + "/\(orderId)/empty"

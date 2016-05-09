@@ -11,7 +11,6 @@ import UIKit
 
 class Definitions:NSObject {
     class var SERVER_URL : String {
-        //return "https://spree-rails4.herokuapp.com"
         return "https://soliduxample.herokuapp.com"
     }
     
