@@ -14,8 +14,7 @@ class RESTManager: NSObject {
         let strURL:String
         if(accessToken != ""){
             strURL = Definitions.SERVER_URL + "\(service)?token=\(accessToken)"
-        }
-        else{
+        } else {
             strURL = Definitions.SERVER_URL + service
         }
         let request = NSMutableURLRequest(URL: NSURL(string: strURL)!)
@@ -47,20 +46,17 @@ class RESTManager: NSObject {
                         #endif
                         if(error != nil) {
                             callback(false, json, error!)
-                        }
-                        else {
+                        } else {
                             let err = NSError(domain: "", code: 0, userInfo: nil)
                             callback(false, json, err)
                         }
-                    }
-                    else {
+                    } else {
                         #if DEBUG
                             print("Debug Log info: \(response), \(error)")
                         #endif
                         if(error != nil) {
                             callback(true, json, error!)
-                        }
-                        else {
+                        } else {
                             let err = NSError(domain: "", code: 0, userInfo: nil)
                             callback(true, json, err)
                         }
@@ -81,8 +77,7 @@ class RESTManager: NSObject {
                 if let httpResponse = response as? NSHTTPURLResponse {
                     if(httpResponse.statusCode == 204) {
                         callback(true, jsonStr!, error!)
-                    }
-                    else{
+                    } else {
                         callback(false, jsonStr!, error!)
                     }
                 }

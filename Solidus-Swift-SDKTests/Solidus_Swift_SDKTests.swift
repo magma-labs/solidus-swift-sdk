@@ -31,13 +31,11 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 let count = result.objectForKey("count") as! Int
                 if(count > 0) {
                     XCTAssertGreaterThan(count, 0)
-                }
-                else {
+                } else {
                     XCTAssertEqual(count, 0)
                 }
                 asyncExpectation.fulfill()
-            }
-            else {
+            } else {
                 XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
@@ -59,8 +57,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 let countryName = result.objectForKey("name") as? String
                 XCTAssertEqual(countryName, "Mexico")
                 asyncExpectation.fulfill()
-            }
-            else {
+            } else {
                 XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
@@ -82,8 +79,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 let states = result.objectForKey("states")
                 XCTAssertNotNil(states)
                 asyncExpectation.fulfill()
-            }
-            else {
+            } else {
                 XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
@@ -105,8 +101,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 let stateAbbr = result.objectForKey("abbr") as? String
                 XCTAssertEqual(stateAbbr, "MIC")
                 asyncExpectation.fulfill()
-            }
-            else {
+            } else {
                 XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
@@ -128,13 +123,11 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 let count = result.objectForKey("count") as! Int
                 if(count > 0) {
                     XCTAssertGreaterThan(count, 0)
-                }
-                else {
+                } else {
                     XCTAssertEqual(count, 0)
                 }
                 asyncExpectation.fulfill()
-            }
-            else {
+            } else {
                 XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
@@ -156,13 +149,11 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 let currentPage = result.objectForKey("current_page") as! Int
                 if(currentPage > 0) {
                     XCTAssertGreaterThan(currentPage, 0)
-                }
-                else {
+                } else {
                     XCTAssertEqual(currentPage, 0)
                 }
                 asyncExpectation.fulfill()
-            }
-            else {
+            } else {
                 XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
@@ -184,8 +175,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
                 XCTAssert(success, "service success")
                 XCTAssertNotNil(result)
                 asyncExpectation.fulfill()
-            }
-            else {
+            } else {
                 XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
@@ -205,8 +195,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
             if(success) {
                 XCTAssert(success, "service success")
                 asyncExpectation.fulfill()
-            }
-            else {
+            } else {
                 XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
@@ -227,8 +216,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
             if(success) {
                 XCTAssert(success, "service success")
                 asyncExpectation.fulfill()
-            }
-            else {
+            } else {
                 XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
@@ -249,8 +237,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
             if(success) {
                 XCTAssert(success, "service success")
                 asyncExpectation.fulfill()
-            }
-            else {
+            } else {
                 XCTAssertFalse(success, "service unsuccess")
                 asyncExpectation.fulfill()
             }
