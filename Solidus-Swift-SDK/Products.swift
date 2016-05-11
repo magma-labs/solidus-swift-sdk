@@ -129,5 +129,32 @@ class Products: NSObject {
         task.resume()
     }
     
+    func delete(permalink: String, completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
+    
+        let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)/\(permalink)?token=\(Definitions.AUTH_TOKEN)"
+        let url = NSURL(string: urlQuery)!
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "DELETE"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Data-Type")
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request) { data, response, error in
+            if let error = error {
+                completionHandler(result: nil, error: error)
+            } else if let httpResponse = response as? NSHTTPURLResponse {
+                if httpResponse.statusCode == 204 {
+                    do {
+                        let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
+                        completionHandler(result: json, error: nil)
+                    } catch let error as NSError {
+                        completionHandler(result: nil, error: error)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
+    
     
 }
