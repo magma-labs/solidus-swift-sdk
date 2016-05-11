@@ -54,7 +54,6 @@ class ProductsTest: XCTestCase {
                 XCTAssertEqual(error, nil)
                 let productId = result!["id"]!.integerValue
                 XCTAssertGreaterThanOrEqual(productId, 1)
-                print(result)
             }
             expectation.fulfill()
         }
@@ -69,15 +68,15 @@ class ProductsTest: XCTestCase {
     func testShowProductById() {
         let expectation = expectationWithDescription("showProductById")
         let products = Products()
-        let expectedProductId = 2
+        let expectedProductID = 2
         
-        products.showProductById(expectedProductId) { (result, error) in
+        products.showById(expectedProductID) { (result, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else {
                 XCTAssertEqual(error, nil)
-                let productId = result!["id"]!.integerValue
-                XCTAssertEqual(productId, expectedProductId)
+                let productID = result!["id"]!.integerValue
+                XCTAssertEqual(productID, expectedProductID)
             }
             expectation.fulfill()
         }
@@ -85,6 +84,31 @@ class ProductsTest: XCTestCase {
         self.waitForExpectationsWithTimeout(10) { error in
             if let error = error {
                 XCTFail("waitForExpectationTimeout errored: \(error)")
+            }
+        }
+    }
+    
+    func testCreateProduct() {
+        let expectation = expectationWithDescription("createProduct")
+        let products = Products()
+        let newProductAttributes: [String:AnyObject] = ["name": "Swiftsofthoodie",
+                                              "price": "49.99",
+                                              "shipping_category_id": "1"]
+        let newProduct = ["product": newProductAttributes]
+        
+        
+        products.create(newProduct) { (result, error) in
+            if let error = error {
+                print("\n Log infor error: \(error.localizedDescription)")
+            } else {
+                XCTAssertEqual(error, nil)
+            }
+            expectation.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(10) { error in
+            if let error = error {
+                XCTFail("\n waitForExpectationTimeout errored: \(error)")
             }
         }
     }

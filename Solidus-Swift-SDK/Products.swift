@@ -22,9 +22,8 @@ class Products: NSObject {
         
         let url = NSURL(string: urlQuery)!
         let request = NSMutableURLRequest(URL: url)
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("json", forHTTPHeaderField: "Data-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Data-Type")
         
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
@@ -49,9 +48,8 @@ class Products: NSObject {
         let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)/\(permalink)?token=\(Definitions.AUTH_TOKEN)"
         let url = NSURL(string: urlQuery)!
         let request = NSMutableURLRequest(URL: url)
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("json", forHTTPHeaderField: "Data-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Data-Type")
         
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
@@ -71,14 +69,13 @@ class Products: NSObject {
         task.resume()
     }
     
-    func showProductById(productId: Int, completionHandler: (result: NSDictionary?, error: NSError?) -> Void) {
+    func showById(productID: Int, completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
         
-        let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)/\(String(productId))?token=\(Definitions.AUTH_TOKEN)"
+        let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)/\(String(productID))?token=\(Definitions.AUTH_TOKEN)"
         let url = NSURL(string: urlQuery)!
         let request = NSMutableURLRequest(URL: url)
-        request.addValue("application/json", forHTTPHeaderField: "Accept")
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("json", forHTTPHeaderField: "Data-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Data-Type")
         
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
@@ -86,6 +83,40 @@ class Products: NSObject {
                 completionHandler(result: nil, error: error)
             } else if let httpResponse = response as? NSHTTPURLResponse {
                 if httpResponse.statusCode == 200 {
+                    do {
+                        let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
+                        completionHandler(result: json, error: nil)
+                    } catch let error as NSError {
+                        completionHandler(result: nil, error: error)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    func create(dictAttributes: NSDictionary, completionHandler: (result: AnyObject?, error: NSError?) -> Void ) {
+    
+        let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)?token=\(Definitions.AUTH_TOKEN)"
+        let url = NSURL(string: urlQuery)!
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json", forHTTPHeaderField: "Data-Type")
+        
+        do {
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(dictAttributes, options: NSJSONWritingOptions.PrettyPrinted)
+            request.HTTPBody = jsonData
+        } catch let error as NSError {
+            completionHandler(result: nil, error: error)
+        }
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request) { data, response, error in
+            if let error = error {
+                completionHandler(result: nil, error: error)
+            } else if let httpResponse = response as? NSHTTPURLResponse {
+                if httpResponse.statusCode == 201 {
                     do {
                         let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
                         completionHandler(result: json, error: nil)
