@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA09E9E71CE3A05600D70DEF /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09E9E61CE3A05600D70DEF /* HTTPMethods.swift */; };
+		AA09E9E81CE3A05600D70DEF /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09E9E61CE3A05600D70DEF /* HTTPMethods.swift */; };
+		AA09E9EA1CE3A27C00D70DEF /* APICallTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09E9E91CE3A27C00D70DEF /* APICallTest.swift */; };
+		AA09E9EC1CE3B22200D70DEF /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09E9EB1CE3B22200D70DEF /* APICall.swift */; };
+		AA09E9ED1CE3B22200D70DEF /* APICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09E9EB1CE3B22200D70DEF /* APICall.swift */; };
 		AA0E2A501CD902D200A4B34F /* EndpointsURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E2A4F1CD902D200A4B34F /* EndpointsURL.swift */; };
 		AA0E2A521CD905E000A4B34F /* EndpointsBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E2A511CD905E000A4B34F /* EndpointsBase.swift */; };
 		AA0E2A531CD905E000A4B34F /* EndpointsBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E2A511CD905E000A4B34F /* EndpointsBase.swift */; };
@@ -36,6 +41,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA09E9E61CE3A05600D70DEF /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
+		AA09E9E91CE3A27C00D70DEF /* APICallTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICallTest.swift; sourceTree = "<group>"; };
+		AA09E9EB1CE3B22200D70DEF /* APICall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
 		AA0E2A4F1CD902D200A4B34F /* EndpointsURL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsURL.swift; sourceTree = "<group>"; };
 		AA0E2A511CD905E000A4B34F /* EndpointsBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndpointsBase.swift; sourceTree = "<group>"; };
 		AA10BA811CDBB0EA00BC9D3B /* Products.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
@@ -73,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AA09E9E51CE3A02A00D70DEF /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				AA09E9E61CE3A05600D70DEF /* HTTPMethods.swift */,
+			);
+			name = Structures;
+			sourceTree = "<group>";
+		};
 		C8BE239C1CD7AE1F000165AD = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +110,7 @@
 		C8BE23A71CD7AE1F000165AD /* Solidus-Swift-SDK */ = {
 			isa = PBXGroup;
 			children = (
+				AA09E9E51CE3A02A00D70DEF /* Structures */,
 				C8BE23CD1CD7AF9B000165AD /* EndPoints */,
 				C8BE23C81CD7AE2A000165AD /* Managers */,
 				C8BE23A81CD7AE1F000165AD /* AppDelegate.swift */,
@@ -113,6 +130,7 @@
 				C8BE23BF1CD7AE20000165AD /* Info.plist */,
 				AA0E2A4F1CD902D200A4B34F /* EndpointsURL.swift */,
 				AA12EAB71CDCFB7700EE0197 /* ProductsTest.swift */,
+				AA09E9E91CE3A27C00D70DEF /* APICallTest.swift */,
 			);
 			path = "Solidus-Swift-SDKTests";
 			sourceTree = "<group>";
@@ -122,6 +140,7 @@
 			children = (
 				C8BE23C91CD7AE5A000165AD /* Definitions.swift */,
 				C8BE23CB1CD7AE69000165AD /* RESTManager.swift */,
+				AA09E9EB1CE3B22200D70DEF /* APICall.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -237,6 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA09E9E71CE3A05600D70DEF /* HTTPMethods.swift in Sources */,
 				C8BE23AB1CD7AE1F000165AD /* ViewController.swift in Sources */,
 				C8BE23CC1CD7AE69000165AD /* RESTManager.swift in Sources */,
 				C8BE23CA1CD7AE5A000165AD /* Definitions.swift in Sources */,
@@ -244,6 +264,7 @@
 				C8BE23CF1CD7AFBA000165AD /* Countries.swift in Sources */,
 				C8BE23A91CD7AE1F000165AD /* AppDelegate.swift in Sources */,
 				AA0E2A521CD905E000A4B34F /* EndpointsBase.swift in Sources */,
+				AA09E9EC1CE3B22200D70DEF /* APICall.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,10 +274,13 @@
 			files = (
 				AA12EAB91CDCFD6E00EE0197 /* Definitions.swift in Sources */,
 				AA12EAB81CDCFB7700EE0197 /* ProductsTest.swift in Sources */,
+				AA09E9EA1CE3A27C00D70DEF /* APICallTest.swift in Sources */,
 				AA0E2A501CD902D200A4B34F /* EndpointsURL.swift in Sources */,
 				AA10BA831CDBB0EA00BC9D3B /* Products.swift in Sources */,
 				C8BE23BE1CD7AE20000165AD /* Solidus_Swift_SDKTests.swift in Sources */,
 				AA0E2A531CD905E000A4B34F /* EndpointsBase.swift in Sources */,
+				AA09E9E81CE3A05600D70DEF /* HTTPMethods.swift in Sources */,
+				AA09E9ED1CE3B22200D70DEF /* APICall.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

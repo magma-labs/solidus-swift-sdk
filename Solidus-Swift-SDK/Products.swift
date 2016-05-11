@@ -3,7 +3,7 @@
 //  Solidus-Swift-SDK
 //
 //  Created by Francisco Flores on 5/5/16.
-//  Copyright © 2016 Omar Guzman. All rights reserved.
+//  Copyright © 2016 Magmalabs. All rights reserved.
 //
 
 import Foundation
