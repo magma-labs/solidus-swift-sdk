@@ -94,10 +94,8 @@ class ProductsTest: XCTestCase {
         let newProductAttributes: [String:AnyObject] = ["name": "Swift soft hoodie",
                                               "price": "49.99",
                                               "shipping_category_id": "1"]
-        let newProduct = ["product": newProductAttributes]
         
-        
-        products.create(newProduct) { (result, error) in
+        products.create(newProductAttributes) { (result, error) in
             if let error = error {
                 print("\n Log infor error: \(error.localizedDescription)")
             } else {

@@ -20,141 +20,51 @@ class Products: NSObject {
             urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)?token=\(Definitions.AUTH_TOKEN)"
         }
         
-        let url = NSURL(string: urlQuery)!
-        let request = NSMutableURLRequest(URL: url)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Data-Type")
-        
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request) { data, response, error in
-            if let error = error {
-                completionHandler(result: nil, error: error)
-            } else if let httpResponse = response as? NSHTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    do {
-                        let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
-                        completionHandler(result: json, error: error)
-                    } catch let error as NSError {
-                        completionHandler(result: nil, error: error)
-                    }
-                }
-            }
+        APICall.request(urlQuery, httpMethod: .get, data: nil, successStatusCode: 200) { (result, error) in
+            completionHandler(result: result, error: error)
         }
-        task.resume()
     }
     
     func showByPermalink(permalink: String, completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
         
         let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)/\(permalink)?token=\(Definitions.AUTH_TOKEN)"
-        let url = NSURL(string: urlQuery)!
-        let request = NSMutableURLRequest(URL: url)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Data-Type")
         
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request) { data, response, error in
-            if let error = error {
-                completionHandler(result: nil, error: error)
-            } else if let httpResponse = response as? NSHTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    do {
-                        let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
-                        completionHandler(result: json, error: nil)
-                    } catch let error as NSError {
-                        completionHandler(result: nil, error: error)
-                    }
-                }
-            }
+        APICall.request(urlQuery, httpMethod: .get, data: nil, successStatusCode: 200) { (result, error) in
+            completionHandler(result: result, error: error)
         }
-        task.resume()
     }
     
     func showById(productID: Int, completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
         
         let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)/\(String(productID))?token=\(Definitions.AUTH_TOKEN)"
-        let url = NSURL(string: urlQuery)!
-        let request = NSMutableURLRequest(URL: url)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Data-Type")
         
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request) { data, response, error in
-            if let error = error {
-                completionHandler(result: nil, error: error)
-            } else if let httpResponse = response as? NSHTTPURLResponse {
-                if httpResponse.statusCode == 200 {
-                    do {
-                        let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
-                        completionHandler(result: json, error: nil)
-                    } catch let error as NSError {
-                        completionHandler(result: nil, error: error)
-                    }
-                }
-            }
+        APICall.request(urlQuery, httpMethod: .get, data: nil, successStatusCode: 200) { (result, error) in
+            completionHandler(result: result, error: error)
         }
-        task.resume()
     }
     
     func create(dictAttributes: NSDictionary, completionHandler: (result: AnyObject?, error: NSError?) -> Void ) {
     
         let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)?token=\(Definitions.AUTH_TOKEN)"
-        let url = NSURL(string: urlQuery)!
-        let request = NSMutableURLRequest(URL: url)
-        request.HTTPMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Data-Type")
+        let newProduct = ["product": dictAttributes]
         
         do {
-            let jsonData = try NSJSONSerialization.dataWithJSONObject(dictAttributes, options: NSJSONWritingOptions.PrettyPrinted)
-            request.HTTPBody = jsonData
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(newProduct, options: .PrettyPrinted)
+            APICall.request(urlQuery, httpMethod: .post, data: jsonData, successStatusCode: 201, completionHandler: { (result, error) in
+                completionHandler(result: result, error: error)
+            })
         } catch let error as NSError {
             completionHandler(result: nil, error: error)
         }
-        
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request) { data, response, error in
-            if let error = error {
-                completionHandler(result: nil, error: error)
-            } else if let httpResponse = response as? NSHTTPURLResponse {
-                if httpResponse.statusCode == 201 {
-                    do {
-                        let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
-                        completionHandler(result: json, error: nil)
-                    } catch let error as NSError {
-                        completionHandler(result: nil, error: error)
-                    }
-                }
-            }
-        }
-        task.resume()
     }
     
     func delete(permalink: String, completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
     
         let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)/\(permalink)?token=\(Definitions.AUTH_TOKEN)"
-        let url = NSURL(string: urlQuery)!
-        let request = NSMutableURLRequest(URL: url)
-        request.HTTPMethod = "DELETE"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("application/json", forHTTPHeaderField: "Data-Type")
         
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request) { data, response, error in
-            if let error = error {
-                completionHandler(result: nil, error: error)
-            } else if let httpResponse = response as? NSHTTPURLResponse {
-                if httpResponse.statusCode == 204 {
-                    do {
-                        let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments) as! NSDictionary
-                        completionHandler(result: json, error: nil)
-                    } catch let error as NSError {
-                        completionHandler(result: nil, error: error)
-                    }
-                }
-            }
+        APICall.request(urlQuery, httpMethod: .delete, data: nil, successStatusCode: 204) { (result, error) in
+            completionHandler(result: result, error: error)
         }
-        task.resume()
     }
-    
-    
+
 }
