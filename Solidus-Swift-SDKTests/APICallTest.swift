@@ -55,7 +55,7 @@ class APICallTest: XCTestCase {
             
             APICall.request(urlQuery, httpMethod: .post, data: jsonData, successStatusCode: 201) { (result, error) in
                 if let error = error {
-                    print("\n Log infor error: \(error.localizedDescription)")
+                    print("\n Log info error: \(error.localizedDescription)")
                 } else {
                     XCTAssertEqual(error, nil)
                 }

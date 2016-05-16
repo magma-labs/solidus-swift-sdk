@@ -66,5 +66,15 @@ class Products: NSObject {
             completionHandler(result: result, error: error)
         }
     }
+    
+    func update(permalink: String, attributesToUpdate: NSDictionary, completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
+        
+        let paraeterizedAttributes = UtilsManager.parameterizeAttributesDictionary("product", dictAttributes: attributesToUpdate)
+        let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)/\(permalink)?token=\(Definitions.AUTH_TOKEN)\(paraeterizedAttributes)"
+        
+        APICall.request(urlQuery, httpMethod: .put, data: nil, successStatusCode: 200) { (result, error) in
+            completionHandler(result: result, error: error)
+        }
+    }
 
 }

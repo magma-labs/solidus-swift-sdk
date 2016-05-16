@@ -91,13 +91,13 @@ class ProductsTest: XCTestCase {
     func testCreateProduct() {
         let expectation = expectationWithDescription("createProduct")
         let products = Products()
-        let newProductAttributes: [String:AnyObject] = ["name": "Swift soft hoodie",
+        let newProductAttributes: [String: AnyObject] = ["name": "Swift soft hoodie",
                                               "price": "49.99",
                                               "shipping_category_id": "1"]
         
         products.create(newProductAttributes) { (result, error) in
             if let error = error {
-                print("\n Log infor error: \(error.localizedDescription)")
+                print("\n Log info error: \(error.localizedDescription)")
             } else {
                 XCTAssertEqual(error, nil)
             }
@@ -116,6 +116,28 @@ class ProductsTest: XCTestCase {
         let products = Products()
         
         products.delete("swift-soft-hoodie") { (result, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                XCTAssertEqual(error, nil)
+            }
+            expectation.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(10) { error in
+            if let error = error {
+                XCTFail("\n waitForExpectationTimeout errored: \(error)")
+            }
+        }
+    }
+    
+    func testUpdateProduct() {
+        let expectation = expectationWithDescription("updateProduct")
+        let products = Products()
+        let productAttributesToUpdate: [String: AnyObject] = ["description": "Updating description of this product",
+                                                              "price": "49.99"]
+        
+        products.update("apache-baseball-jersey", attributesToUpdate: productAttributesToUpdate) { result, error in
             if let error = error {
                 print(error.localizedDescription)
             } else {

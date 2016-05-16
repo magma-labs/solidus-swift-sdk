@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA03C3A81CE63F6C00F32EE8 /* UtilsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA03C3A71CE63F6C00F32EE8 /* UtilsManager.swift */; };
+		AA03C3A91CE63F6C00F32EE8 /* UtilsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA03C3A71CE63F6C00F32EE8 /* UtilsManager.swift */; };
+		AA03C3AB1CE6416600F32EE8 /* UtilsManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA03C3AA1CE6416600F32EE8 /* UtilsManagerTest.swift */; };
 		AA09E9E71CE3A05600D70DEF /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09E9E61CE3A05600D70DEF /* HTTPMethods.swift */; };
 		AA09E9E81CE3A05600D70DEF /* HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09E9E61CE3A05600D70DEF /* HTTPMethods.swift */; };
 		AA09E9EA1CE3A27C00D70DEF /* APICallTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09E9E91CE3A27C00D70DEF /* APICallTest.swift */; };
@@ -41,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA03C3A71CE63F6C00F32EE8 /* UtilsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsManager.swift; sourceTree = "<group>"; };
+		AA03C3AA1CE6416600F32EE8 /* UtilsManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilsManagerTest.swift; sourceTree = "<group>"; };
 		AA09E9E61CE3A05600D70DEF /* HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethods.swift; sourceTree = "<group>"; };
 		AA09E9E91CE3A27C00D70DEF /* APICallTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICallTest.swift; sourceTree = "<group>"; };
 		AA09E9EB1CE3B22200D70DEF /* APICall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APICall.swift; sourceTree = "<group>"; };
@@ -131,6 +136,7 @@
 				AA0E2A4F1CD902D200A4B34F /* EndpointsURL.swift */,
 				AA12EAB71CDCFB7700EE0197 /* ProductsTest.swift */,
 				AA09E9E91CE3A27C00D70DEF /* APICallTest.swift */,
+				AA03C3AA1CE6416600F32EE8 /* UtilsManagerTest.swift */,
 			);
 			path = "Solidus-Swift-SDKTests";
 			sourceTree = "<group>";
@@ -141,6 +147,7 @@
 				C8BE23C91CD7AE5A000165AD /* Definitions.swift */,
 				C8BE23CB1CD7AE69000165AD /* RESTManager.swift */,
 				AA09E9EB1CE3B22200D70DEF /* APICall.swift */,
+				AA03C3A71CE63F6C00F32EE8 /* UtilsManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -265,6 +272,7 @@
 				C8BE23A91CD7AE1F000165AD /* AppDelegate.swift in Sources */,
 				AA0E2A521CD905E000A4B34F /* EndpointsBase.swift in Sources */,
 				AA09E9EC1CE3B22200D70DEF /* APICall.swift in Sources */,
+				AA03C3A81CE63F6C00F32EE8 /* UtilsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +289,8 @@
 				AA0E2A531CD905E000A4B34F /* EndpointsBase.swift in Sources */,
 				AA09E9E81CE3A05600D70DEF /* HTTPMethods.swift in Sources */,
 				AA09E9ED1CE3B22200D70DEF /* APICall.swift in Sources */,
+				AA03C3AB1CE6416600F32EE8 /* UtilsManagerTest.swift in Sources */,
+				AA03C3A91CE63F6C00F32EE8 /* UtilsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
