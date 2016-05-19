@@ -18,7 +18,7 @@ class Orders: NSObject {
     }
     
     class func Search (predicate: String, callback: (Bool, AnyObject, AnyObject) -> ()) {
-        let currentService = EndpointsBase.orders+"?\(predicate)&token=\(Definitions.AUTH_TOKEN)"
+        let currentService = EndpointsBase.orders + "?\(predicate)&token=\(Definitions.AUTH_TOKEN)"
         RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (success, result, error) in
             callback(success, result, error)
         }
