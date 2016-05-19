@@ -24,13 +24,40 @@ class ProductsTest: XCTestCase {
         let expectation = expectationWithDescription("getAllProducts")
         let products = Products()
         
-        products.list(nil) { (result, error) in
+        products.list(nil, arrQueries: nil) { (result, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else {
                 XCTAssertEqual(error, nil)
                 let currentPage = result!["current_page"]!.integerValue
                 XCTAssertGreaterThanOrEqual(currentPage, 1)
+            }
+            expectation.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(10) { error in
+            if let error = error {
+                XCTFail("waitForExpectationTimeout errored: \(error)")
+            }
+        }
+    }
+    
+    func testGetAllProductsWithRansackQuery() {
+    
+        let expectation = expectationWithDescription("getAllProductsWithRansackWuery")
+        let products = Products()
+        let expectedProductsCount = 3
+        
+        let listQueries : [RansackQuery] = [RansackQuery(key: "name", verb: .Contains, value: "jersey"),
+                                              RansackQuery(key: "name", verb: .SortAsc, value: "")]
+        
+        products.list(nil, arrQueries: listQueries ) { (result, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                XCTAssertEqual(error, nil)
+                let productsCount = result!["count"]!.integerValue
+                XCTAssertEqual(productsCount, expectedProductsCount)
             }
             expectation.fulfill()
         }

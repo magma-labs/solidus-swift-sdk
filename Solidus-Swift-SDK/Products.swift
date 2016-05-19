@@ -11,7 +11,7 @@ import Foundation
 class Products: NSObject {
 
 
-    func list(page: Int?, completionHandler: (result: NSDictionary?, error: NSError?) -> Void){
+    func list(page: Int?, arrQueries: [RansackQuery]?, completionHandler: (result: NSDictionary?, error: NSError?) -> Void){
         
         var urlQuery : String
         if let page = page {
@@ -20,6 +20,12 @@ class Products: NSObject {
             urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)?token=\(Definitions.AUTH_TOKEN)"
         }
         
+        if let arrQueries = arrQueries {
+            let parameterizedQueries = UtilsManager.parameterizeRansackQueries(arrQueries)
+            urlQuery = "\(urlQuery)\(parameterizedQueries)"
+        }
+        
+        print("\n urlQuery \(urlQuery)")
         APICall.request(urlQuery, httpMethod: .get, data: nil, successStatusCode: 200) { (result, error) in
             completionHandler(result: result, error: error)
         }
@@ -80,7 +86,6 @@ class Products: NSObject {
     func search(arrQueries: [RansackQuery], completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
         
         let parameterizedQueries = UtilsManager.parameterizeRansackQueries(arrQueries)
-        print("\n Queries \(parameterizedQueries)")
         let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)?token=\(Definitions.AUTH_TOKEN)\(parameterizedQueries)"
         
         APICall.request(urlQuery, httpMethod: .get, data: nil, successStatusCode: 200) { (result, error) in
