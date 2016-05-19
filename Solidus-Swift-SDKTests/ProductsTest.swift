@@ -134,7 +134,7 @@ class ProductsTest: XCTestCase {
     func testUpdateProduct() {
         let expectation = expectationWithDescription("updateProduct")
         let products = Products()
-        let productAttributesToUpdate: [String: AnyObject] = ["description": "Updating description of this product",
+        let productAttributesToUpdate: [String: String] = ["description": "Updating description of this product",
                                                               "price": "49.99"]
         
         products.update("apache-baseball-jersey", attributesToUpdate: productAttributesToUpdate) { result, error in
@@ -153,4 +153,31 @@ class ProductsTest: XCTestCase {
         }
     }
     
+    
+    func testSearchProducts() {
+        let expectation = expectationWithDescription("searchProducts")
+        let products = Products()
+        let expectedProductsCount = 3
+        
+        let searchQueries : [RansackQuery] = [RansackQuery(key: "name", verb: .Contains, value: "jersey"),
+                                              RansackQuery(key: "name", verb: .SortAsc, value: "")]
+        
+        products.search(searchQueries) { result, error in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                XCTAssertEqual(error, nil)
+                let productsCount = result!["count"]!.integerValue
+                XCTAssertEqual(productsCount, expectedProductsCount)
+            }
+            expectation.fulfill()
+        }
+        
+        self.waitForExpectationsWithTimeout(10) { error in
+            if let error = error {
+                XCTFail("\n waitForExpectationTimeout errored: \(error)")
+            }
+        }
+    
+    }
 }

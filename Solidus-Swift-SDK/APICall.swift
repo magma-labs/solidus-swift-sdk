@@ -24,6 +24,7 @@ class APICall : NSObject {
         
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request) { data, response, error in
+            print("\n Response \(response)")
             if let error = error {
                 completionHandler(result: nil, error: error)
             } else if let httpResponse = response as? NSHTTPURLResponse {

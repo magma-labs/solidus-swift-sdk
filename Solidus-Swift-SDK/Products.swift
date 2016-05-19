@@ -69,10 +69,21 @@ class Products: NSObject {
     
     func update(permalink: String, attributesToUpdate: NSDictionary, completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
         
-        let paraeterizedAttributes = UtilsManager.parameterizeAttributesDictionary("product", dictAttributes: attributesToUpdate)
-        let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)/\(permalink)?token=\(Definitions.AUTH_TOKEN)\(paraeterizedAttributes)"
+        let parameterizedAttributes = UtilsManager.parameterizeAttributesDictionary("product", dictAttributes: attributesToUpdate)
+        let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)/\(permalink)?token=\(Definitions.AUTH_TOKEN)\(parameterizedAttributes)"
         
         APICall.request(urlQuery, httpMethod: .put, data: nil, successStatusCode: 200) { (result, error) in
+            completionHandler(result: result, error: error)
+        }
+    }
+    
+    func search(arrQueries: [RansackQuery], completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
+        
+        let parameterizedQueries = UtilsManager.parameterizeRansackQueries(arrQueries)
+        print("\n Queries \(parameterizedQueries)")
+        let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)?token=\(Definitions.AUTH_TOKEN)\(parameterizedQueries)"
+        
+        APICall.request(urlQuery, httpMethod: .get, data: nil, successStatusCode: 200) { (result, error) in
             completionHandler(result: result, error: error)
         }
     }
