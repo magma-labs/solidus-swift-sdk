@@ -25,7 +25,6 @@ class Products: NSObject {
             urlQuery = "\(urlQuery)\(parameterizedQueries)"
         }
         
-        print("\n urlQuery \(urlQuery)")
         APICall.request(urlQuery, httpMethod: .get, data: nil, successStatusCode: 200) { (result, error) in
             completionHandler(result: result, error: error)
         }
