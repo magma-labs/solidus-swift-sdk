@@ -46,7 +46,7 @@ class ProductsTest: XCTestCase {
         let expectation = expectationWithDescription("showProductByPermalink")
         let products = Products()
         
-        products.showByPermalink("ruby-on-rails-tote") { (result, error) in
+        products.findByPermalink("ruby-on-rails-tote") { (result, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else {
@@ -70,7 +70,7 @@ class ProductsTest: XCTestCase {
         let products = Products()
         let expectedProductID = 2
         
-        products.showById(expectedProductID) { (result, error) in
+        products.findById(expectedProductID) { (result, error) in
             if let error = error {
                 print(error.localizedDescription)
             } else {

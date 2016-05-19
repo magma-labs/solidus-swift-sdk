@@ -25,7 +25,7 @@ class Products: NSObject {
         }
     }
     
-    func showByPermalink(permalink: String, completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
+    func findByPermalink(permalink: String, completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
         
         let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)/\(permalink)?token=\(Definitions.AUTH_TOKEN)"
         
@@ -34,7 +34,7 @@ class Products: NSObject {
         }
     }
     
-    func showById(productID: Int, completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
+    func findById(productID: Int, completionHandler: (result: NSDictionary?, error: NSError?) -> Void ) {
         
         let urlQuery = "\(Definitions.SERVER_URL)\(EndpointsBase.products)/\(String(productID))?token=\(Definitions.AUTH_TOKEN)"
         
