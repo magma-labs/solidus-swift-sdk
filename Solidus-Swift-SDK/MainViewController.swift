@@ -29,7 +29,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     private func loadData() {
-        Orders.List { (success, result, error) in
+        Orders.list { (success, result, error) in
             self.arrOrders = result.objectForKey("orders") as! NSArray
             self.tblOrders?.reloadData()
         }

@@ -22,7 +22,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
     func testCountriesList() {
         let asyncExpectation = expectationWithDescription("async call")
         
-        Countries.List { (success, result, error) in
+        Countries.list { (success, result, error) in
             if(error.description != "") {
                 XCTAssertNotNil(error.description, "service error")
             }
@@ -48,7 +48,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
     func testCountriesShow() {
         let asyncExpectation = expectationWithDescription("async call")
         
-        Countries.Show("157") { (success, result, error) in
+        Countries.show("157") { (success, result, error) in
             if(error.description != "") {
                 XCTAssertNotNil(error.description, "service error")
             }
@@ -70,7 +70,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
     func testCountriesListState() {
         let asyncExpectation = expectationWithDescription("async call")
         
-        Countries.ListStates("1") { (success, result, error) in
+        Countries.listStates("1") { (success, result, error) in
             if(error.description != "") {
                 XCTAssertNotNil(error.description, "service error")
             }
@@ -92,7 +92,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
     func testCountriesShowState() {
         let asyncExpectation = expectationWithDescription("async call")
         
-        Countries.ShowState("157", stateId: "2249") { (success, result, error) in
+        Countries.showState("157", stateId: "2249") { (success, result, error) in
             if(error.description != "") {
                 XCTAssertNotNil(error.description, "service error")
             }
@@ -114,7 +114,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
     func testCountriesSearch() {
         let asyncExpectation = expectationWithDescription("async call")
         
-        Countries.Search("Mexico") { (success, result, error) in
+        Countries.search("Mexico") { (success, result, error) in
             if(error.description != "") {
                 XCTAssertNotNil(error.description, "service error")
             }
@@ -140,7 +140,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
     func testOrdersList() {
         let asyncExpectation = expectationWithDescription("async call")
         
-        Orders.List { (success, result, error) in
+        Orders.list { (success, result, error) in
             if(error.description != "") {
                 XCTAssertNotNil(error.description, "service error")
             }
@@ -167,7 +167,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
         let asyncExpectation = expectationWithDescription("async call")
         
         let params = ["order":["line_items":["0":["variant_id":"1", "quantity":"10"]]]]
-        Orders.Create(params) { (success, result, error) in
+        Orders.create(params) { (success, result, error) in
             if(error.description != "") {
                 XCTAssertNotNil(error.description, "service error")
             }
@@ -188,7 +188,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
     func testOrdersEmpty() {
         let asyncExpectation = expectationWithDescription("async call")
         
-        Orders.Empty("R888564437") { (success, result, error) in
+        Orders.empty("R888564437") { (success, result, error) in
             if(error.description != "") {
                 XCTAssertNotNil(error.description, "service error")
             }
@@ -209,7 +209,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
         let asyncExpectation = expectationWithDescription("async call")
         
         let predicate = "q[number]=R888564437"
-        Orders.Search(predicate) { (success, result, error) in
+        Orders.search(predicate) { (success, result, error) in
             if(error.description != "") {
                 XCTAssertNotNil(error.description, "service error")
             }
@@ -230,7 +230,7 @@ class Solidus_Swift_SDKTests: XCTestCase {
         let asyncExpectation = expectationWithDescription("async call")
         
         let predicate = "q[email_cont]=spree@example.com"
-        Orders.Search(predicate) { (success, result, error) in
+        Orders.search(predicate) { (success, result, error) in
             if(error.description != "") {
                 XCTAssertNotNil(error.description, "service error")
             }
