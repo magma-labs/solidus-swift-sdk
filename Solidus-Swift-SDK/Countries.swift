@@ -10,47 +10,38 @@ import Foundation
 
 class Countries: NSObject {
     
-    class var EndPoint : String
-    {
-        return "/api/countries"
-    }
-    
-    class func List (callback: (AnyObject) -> ())
-    {
-        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: self.EndPoint, method: "GET", accessToken: "", accessTokenInHeader: false) { (result) in
-            callback(result)
+    class func list (callback: (Bool, AnyObject, AnyObject) -> ()) {
+        let currentService = EndpointsBase.countries
+        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (success, result, error) in
+            callback(success, result, error)
         }
     }
     
-    class func Show (CountryId:String, callback: (AnyObject) -> ())
-    {
-        let currentService = self.EndPoint+"/"+CountryId
-        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (result) in
-            callback(result)
+    class func show (countryId: String, callback: (Bool, AnyObject, AnyObject) -> ()) {
+        let currentService = EndpointsBase.countries + "/\(countryId)"
+        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (success, result, error) in
+            callback(success, result, error)
         }
     }
     
-    class func ListStates (CountryId:String, callback: (AnyObject) -> ())
-    {
-        let currentService = self.EndPoint+"/"+CountryId+"/states"
-        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (result) in
-            callback(result)
+    class func listStates (countryId:String, callback: (Bool, AnyObject, AnyObject) -> ()) {
+        let currentService = EndpointsBase.countries + "/\(countryId)/states"
+        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (success, result, error) in
+            callback(success, result, error)
         }
     }
     
-    class func ShowState (CountryId:String, StateId:String, callback: (AnyObject) -> ())
-    {
-        let currentService = self.EndPoint+"/"+CountryId+"/states/"+StateId
-        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (result) in
-            callback(result)
+    class func showState (countryId:String, stateId:String, callback: (Bool, AnyObject, AnyObject) -> ()) {
+        let currentService = EndpointsBase.countries + "/\(countryId)/states/\(stateId)"
+        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (success, result, error) in
+            callback(success, result, error)
         }
     }
     
-    class func Search (StateName:String, callback: (AnyObject) -> ())
-    {
-        let currentService = self.EndPoint+"?q[name_cont]=\(StateName)"
-        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (result) in
-            callback(result)
+    class func search (stateName:String, callback: (Bool, AnyObject, AnyObject) -> ()) {
+        let currentService = EndpointsBase.countries + "?q[name_cont]=\(stateName)"
+        RESTManager.sendData(NSDictionary() as! Dictionary<String, String>, service: currentService, method: "GET", accessToken: "", accessTokenInHeader: false) { (success, result, error) in
+            callback(success, result, error)
         }
     }
 }
